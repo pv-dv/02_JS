@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-console.log(document.getElementById("name"));
+    console.log(document.getElementById("name"));
     console.log(document.getElementById("name").nextSibling);
     
-    //Adding new paragraph after button
+    // Definition of error paragraph
     var errorParagraph = document.createElement("p");
     var parText = document.createTextNode("Error! Fill this field!");
     errorParagraph.appendChild(parText);
@@ -20,13 +20,11 @@ console.log(document.getElementById("name"));
         if(document.getElementById("name").value.length == 0){
             console.log("Error - puste imie")
             
-            document.getElementById("name").nextSibling.insertBefore(errorParagraph, document.getElementById("name").nextSibling);
+            //put it not under specific element, just one under another
+            
+            document.getElementsByTagName("form").appendChild(errorParagraph);
+//            document.getElementById("name").nextSibling.insertBefore(errorParagraph, document.getElementById("name").nextSibling);
     }
 
     };
-    
-
-    
-    
-
 });
