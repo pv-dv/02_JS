@@ -1,7 +1,7 @@
 // Multiplication results
 function arrayMultiplyParameters(num1, num2, num3) {
     var multiplyResult = num1 * num2 * num3;
-    console.log(multiplyResult);
+    console.log("Multiplication result: " + multiplyResult);
 }
 arrayMultiplyParameters(1,2,3);
 
@@ -14,9 +14,7 @@ function arraySum(arrayIn) {
     arrayIn.forEach( function(element, index) {
         sum += element;
     });
-    
-    
-    console.log(sum);
+    console.log("Sum of elements: " + sum);
 }
 arraySum([1,2,3,4,5]);
 
@@ -32,8 +30,8 @@ function arrayMultiply(arrayIn) {
         multiplyResult *= element;
         sum += element;
     });
-    console.log(multiplyResult);
-    console.log(sum);
+    console.log("Multiplication result: " + multiplyResult);
+    console.log("Sum of elements: " + sum);
 }
 arrayMultiply([1,2,3,4,5]);
 
@@ -47,9 +45,10 @@ function arraySquareSum(arrayIn) {
     arrayIn.forEach( function(element, index) {
         sum += Math.pow(element,2);
     });
-    console.log(sum);
+    return sum;
 }
-arraySquareSum([1,2,3,4,5]);
+var sum = arraySquareSum([1,2,3,4,5]);
+console.log("Sum of squares : " + sum);
 
 
 
@@ -66,6 +65,6 @@ function fibonacciString(n) {
         fib = fibArray[i] + fibArray[prevIndex];
         fibArray.push(fib);
     }
-    console.log(fibArray[n]);
+    console.log("Element " + n + " of Fibonacci String is: " + fibArray[n]);
 }
 fibonacciString(3);
