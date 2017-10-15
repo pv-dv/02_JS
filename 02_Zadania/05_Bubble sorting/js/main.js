@@ -1,6 +1,7 @@
 function bubble(array){
     var swapsOccured;
-    do{
+
+    while (swapsOccured !== 0) {
         swapsOccured = 0;
         for(var i = 0; i < array.length; i++){
             var nextIndex = i + 1;
@@ -11,8 +12,8 @@ function bubble(array){
                 array[i] = array[nextIndex];
                 array[nextIndex] = temp;
             }
-        }         
-    } while (swapsOccured !== 0);
+        }   
+    }
 }
 
 var array = [12, 67, 34, 23.01, 24, 2, 56, 8, 0x10, 23.02, 78,
