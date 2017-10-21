@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="calc">
+        <input type="text" id="display">
+        
+        <input type="button" id="seven" onclick="push(this.value)" value="7">
+        <input type="button" id="eight" onclick="push(this.value)" value="8">
+        <input type="button" id="nine" onclick="push(this.value)" value="9">
+        <input type="button" id="multiply" onclick="push(this.value)" value="*">
+        
+        <input type="button" id="four" onclick="push(this.value)" value="4">
+        <input type="button" id="five" onclick="push(this.value)" value="5">
+        <input type="button" id="six" onclick="push(this.value)" value="6">
+        <input type="button" id="divide" onclick="push(this.value)" value="/">
+        
+        <input type="button" id="one"onclick="push(this.value)" value="1">
+        <input type="button" id="two" onclick="push(this.value)" value="2">
+        <input type="button" id="three" onclick="push(this.value)" value="3">
+        <input type="button" id="minus" onclick="push(this.value)" value="-">
+        
+        <input type="button" id="zero" onclick="push(this.value)" value="0">
+        <input type="button" id="equals" onclick="calculate(document.getElementById('display').value);" value="=">
+        <input type="button" id="decimal" onclick="push(this.value)" value=".">
+        <input type="button" id="plus" onclick="push(this.value)" value="+">
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

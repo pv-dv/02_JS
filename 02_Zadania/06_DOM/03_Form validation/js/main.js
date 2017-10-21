@@ -1,30 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    var validArray = ["Name field", "E-mail field"];
+    var checkArray = ["name", "email"]
+    var htmlString = "<ul>";
 
-
-    console.log(document.getElementById("name"));
-    console.log(document.getElementById("name").nextSibling);
-    
-    // Definition of error paragraph
-    var errorParagraph = document.createElement("p");
-    var parText = document.createTextNode("Error! Fill this field!");
-    errorParagraph.appendChild(parText);
-    errorParagraph.style.color = "#ff0000";
-
-
-
-    document.getElementsByTagName("Form")[0].onsubmit = function(e){
-        
+    document.getElementsByTagName("Form")[0].onsubmit = function (e) {
+      
         e.preventDefault();
-        
-        if(document.getElementById("name").value.length == 0){
-            console.log("Error - puste imie")
-            
-            //put it not under specific element, just one under another
-            
-            document.getElementsByTagName("form").appendChild(errorParagraph);
-//            document.getElementById("name").nextSibling.insertBefore(errorParagraph, document.getElementById("name").nextSibling);
-    }
 
+        for (var i = 0; i < checkArray.length; i++) {
+            if (document.getElementById(checkArray[i]).value.length == 0) {
+                htmlString += "<li>" + validArray[i] + " cannot be empty.</li>"
+            }
+        }
+        if (document.getElementById("zgoda-marketingowa-1").checked == false) {
+            htmlString += "<li>Consent checkbox cannot be empty. </li>"
+        }
+        htmlString += "</ul>";
+        
+        
+        
+        var elementNew = document.createElement("div");
+        elementNew.setAttribute ("id", "error")
+//        console.log(elementNew);
+        elementNew.innerHTML = htmlString;
+        console.log(document.getElementsByTagName("div").length);
+        console.log(document.getElementsByTagName("div"));
+        if(document.getElementsByTagName("div").length > 0){
+//            document.body.lastChild.remove();
+            
+//            console.log(document.getElementById("error"));
+//        document.getElementsByTagName("div").removeChild(document.getElementsByTagName("div")[0]);
+//            console.log(document.getElementsByTagName("div"));
+        }
+        // KURWA MAC
+        document.body.appendChild(elementNew);
+        
+//        return false;
     };
 });
